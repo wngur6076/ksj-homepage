@@ -72,9 +72,16 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-dark-grey);
+  position: relative;
+  background-color: transparent;
   font-weight: var(--weight-bold);
   padding: 10px 20px;
+  white-space: nowrap;
+  transition: all var(--animation--duration) ease-in;
+}
+
+#navbar:hover {
+  background-color: var(--color-dark-grey);
 }
 
 .navbar__menu {
@@ -104,4 +111,34 @@ a {
 
 .util__register {
   background-image: url("images/icon_register.png");
+}
+
+/* Home */
+
+#home {
+  height: 1352px;
+}
+
+#home video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+  #home {
+    height: 1069px;
+  }
+
+  #home video {
+    min-height: auto;
+    width: 100%;
+    height: auto;
+  }
 }
