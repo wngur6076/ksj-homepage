@@ -27,13 +27,20 @@
         <li><a href="#">Communication</a></li>
       </ul>
       <ul class="navbar__util">
-        <li><button class="util__login"></button></li>
-        <li><button class="util__register"></button></li>
+        <li><button class="util__login" title="로그인"></button></li>
+        <li><button class="util__register" title="회원가입"></button></li>
+        <li>
+          <button
+            class="util__admin"
+            title="관리자"
+            onclick="location.href='admin.php' "
+          ></button>
+        </li>
       </ul>
     </nav>
 
     <!-- Memberbox -->
-    <aside class="memberbox">
+    <aside id="memberbox">
       <form class="login" action="login.php" method="POST">
         <input name="id" placeholder="아이디 입력" class="user__id" />
         <input
@@ -78,5 +85,62 @@
         </li>
       </ul>
     </section>
+
+    <footer id="contact">
+      <a href="/"
+        ><img
+          class="contact__logo"
+          src="images/logo-hrpool-footer.png"
+          alt="logo"
+      /></a>
+      <div class="contact__info">
+        <h3 class="contact__title">정보보호 관리진단 과정</h3>
+        <div class="info__list">
+          <dl>
+            <dt class="sr-only">조직</dt>
+            <dd>(주)한국정보보호교육센터</dd>
+          </dl>
+          <dl>
+            <dt class="sr-only">운영 :</dt>
+            <dd>정보보호 관리진단 운영사무국</dd>
+          </dl>
+        </div>
+        <div class="info__list">
+          <dl>
+            <dt>전화번호 :</dt>
+            <dd>02)921-1466</dd>
+          </dl>
+          <dl>
+            <dt>이메일 :</dt>
+            <dd><a href="mailto:edu@kisec.com">edu@kisec.com</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="contact__info">
+        <h3 class="contact__title">보안사고 분석대응 과정</h3>
+        <div class="info__list">
+          <dl>
+            <dt class="sr-only">조직</dt>
+            <dd>(주) 컬처메이커스</dd>
+          </dl>
+          <dl>
+            <dt class="sr-only">운영 :</dt>
+            <dd>보안사고 분석대응 운영사무국</dd>
+          </dl>
+        </div>
+        <div class="info__list">
+          <dl>
+            <dt>전화번호 :</dt>
+            <dd>070)4849-5228</dd>
+          </dl>
+          <dl>
+            <dt>이메일 :</dt>
+            <dd>
+              <a href="mailto:kshieldjr@cmcom.kr">kshieldjr@cmcom.kr</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
