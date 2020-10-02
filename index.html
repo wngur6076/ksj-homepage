@@ -14,14 +14,16 @@
     ></script>
     <title>K-Shield Jr</title>
   </head>
+
   <body>
+    <!-- Navbar -->
     <nav id="navbar">
-      <a href="#" class="navbar__logo">
+      <a href="/" class="navbar__logo">
         <img src="images/logo.png" alt="홈" />
       </a>
       <ul class="navbar__menu">
         <li><a href="#">교육과정</a></li>
-        <li><a href="#">수료생 채용 지원</a></li>
+        <li><a href="#">모집요강</a></li>
         <li><a href="#">Communication</a></li>
       </ul>
       <ul class="navbar__util">
@@ -29,8 +31,52 @@
         <li><button class="util__register"></button></li>
       </ul>
     </nav>
+
+    <!-- Memberbox -->
+    <aside class="memberbox">
+      <form class="login" action="login.php" method="POST">
+        <input name="id" placeholder="아이디 입력" class="user__id" />
+        <input
+          type="password"
+          name="pw"
+          placeholder="비밀번호 입력"
+          class="user__pw"
+        />
+        <input type="submit" value="로그인" class="login__submit" />
+      </form>
+    </aside>
+
+    <!-- Home -->
     <section id="home">
-      <video src="video/ksj.mp4" autoplay loop muted data-keepplaying></video>
+      <!-- <video src="video/ksj.mp4" autoplay loop muted data-keepplaying></video> -->
+      <img src="images/video1.PNG" alt="" />
+    </section>
+
+    <!-- Introduce -->
+    <section id="introduce" class="section">
+      <h1 class="introduce__title">케이쉴드 주니어란?</h1>
+      <p class="introduce__description">
+        과학기술정보통신부가 주최하고 한국인터넷진흥원이 주관하는 K-Shield Jr.
+        교육은 향후 정보보호 분야 취업 시 현장실무를 즉각 수행할 수 있는 사이버
+        보안 전문 주니어 인력 양성을 목표로 하는 프로그램입니다.
+        국가직무능력표준(NCS)에 맞춘 실습 중심의 교육과정 이며, 운영기관별
+        100명씩 총 200명을 선발하여 200시간 이상의 교육과정 이수 후 취업
+        지원까지 운영되는 취업 지원 실무 맞춤형 교육과정입니다.
+      </p>
+      <ul class="introduce__icons">
+        <li>
+          <img src="images/main-what-pic-01.png" alt="" />
+          <p>사이버 보안 전문 주니어 인력 양성</p>
+        </li>
+        <li>
+          <img src="images/main-what-pic-02.png" alt="" />
+          <p>200시간 이상의 교육과정</p>
+        </li>
+        <li>
+          <img src="images/main-what-pic-03.png" alt="" />
+          <p>취업지원 실무 맞춤형 교육과정</p>
+        </li>
+      </ul>
     </section>
   </body>
 </html>
