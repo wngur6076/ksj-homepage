@@ -128,6 +128,11 @@ a {
   background-color: var(--color-dark-grey);
 }
 
+.navbar__menu li:hover {
+  background-color: coral;
+  border-radius: 4px;
+}
+
 .navbar__menu {
   display: flex;
   font-size: var(--font-regular);
@@ -135,6 +140,7 @@ a {
 
 .navbar__menu li {
   margin-right: 100px;
+  padding: 8px 12px;
 }
 
 .navbar__util {
@@ -144,13 +150,17 @@ a {
 .navbar__util button {
   width: 30px;
   height: 35px;
-  margin-left: 10px;
   background-position: center center;
   background-repeat: no-repeat;
+  margin: 0 5px;
 }
 
 .util__login {
   background-image: url("images/icon_login.png");
+}
+
+.util__login.active {
+  background-image: url("images/icon_exit.svg");
 }
 
 .util__register {
@@ -161,9 +171,18 @@ a {
   background-image: url("images/icon_admin.svg");
 }
 
+.navbar__toogle {
+  display: none;
+  position: absolute;
+  right: 17px;
+  top: 15px;
+  font-size: 24px;
+  color: var(--color-white);
+}
+
 /* Home */
 
-#home img {
+.home__video {
   position: relative;
   top: 0;
   left: 50%;
@@ -175,14 +194,22 @@ a {
   z-index: -1;
 }
 
-/* Login */
+/* Memberbox */
 
 #memberbox {
   padding: 25px 15px;
   position: fixed;
   right: 0;
-  top: 70px;
+  top: 66px;
   background-color: var(--color-white);
+  opacity: 0;
+  transition: all var(--animation--duration) ease-in;
+}
+
+#memberbox.active {
+  opacity: 1;
+  right: 0;
+  top: 96px;
 }
 
 #memberbox .login {
@@ -268,21 +295,77 @@ a {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  /* Navbar */
+  #navbar {
+    background-color: var(--color-dark-grey);
+    position: relative;
+  }
+
+  /* Introduce */
   .introduce__icons {
     flex-direction: column;
   }
+
   .introduce__icons li {
     margin-bottom: 60px;
   }
 
+  /* Contact */
   #contact {
     text-align: center;
     flex-direction: column;
   }
+
   .contact__info {
     margin-top: 20px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1719px) {
+@media screen and (max-width: 1070px) {
+  /* Navbar */
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #navbar.active {
+    background-color: var(--color-dark-grey);
+  }
+
+  .navbar__logo img {
+    width: 200px;
+    height: auto;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .navbar__util {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar__toogle {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__util.active {
+    display: flex;
+  }
+
+  /* Memberbox */
+  #memberbox.active {
+    top: 66px;
+  }
 }

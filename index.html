@@ -12,6 +12,7 @@
       src="https://kit.fontawesome.com/4653e649a2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="main.js" defer></script>
     <title>K-Shield Jr</title>
   </head>
 
@@ -19,7 +20,7 @@
     <!-- Navbar -->
     <nav id="navbar">
       <a href="/" class="navbar__logo">
-        <img src="images/logo.png" alt="홈" />
+        <img src="images/logo.png" alt="logo" />
       </a>
       <ul class="navbar__menu">
         <li><a href="#">교육과정</a></li>
@@ -27,16 +28,26 @@
         <li><a href="#">Communication</a></li>
       </ul>
       <ul class="navbar__util">
-        <li><button class="util__login" title="로그인"></button></li>
+        <li>
+          <button
+            class="util__login"
+            onclick="memberboxActive()"
+            title="로그인"
+          ></button>
+        </li>
         <li><button class="util__register" title="회원가입"></button></li>
         <li>
           <button
             class="util__admin"
             title="관리자"
-            onclick="location.href='admin.php' "
+            onclick="location.href='admin.php'"
           ></button>
         </li>
       </ul>
+
+      <a href="#" class="navbar__toogle">
+        <i class="fas fa-bars"></i>
+      </a>
     </nav>
 
     <!-- Memberbox -->
@@ -55,8 +66,15 @@
 
     <!-- Home -->
     <section id="home">
-      <!-- <video src="video/ksj.mp4" autoplay loop muted data-keepplaying></video> -->
-      <img src="images/video1.PNG" alt="" />
+      <!-- <video
+        class="home__video"
+        src="video/ksj.mp4"
+        autoplay
+        loop
+        muted
+        data-keepplaying
+      ></video>-->
+      <img class="home__video" src="images/video1.PNG" alt="" />
     </section>
 
     <!-- Introduce -->
