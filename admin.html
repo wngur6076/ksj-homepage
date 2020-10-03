@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="common.css" />
+    <title>admin</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -14,12 +13,30 @@
       crossorigin="anonymous"
     ></script>
     <script src="main.js" defer></script>
-    <title>K-Shield Jr</title>
+    <link rel="stylesheet" href="common.css" />
+    <style>
+      .section {
+        height: 650px;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      th,
+      td {
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #dadada;
+        font-family: Consolas, monospace;
+        font-family: 12px;
+      }
+    </style>
   </head>
 
   <body>
     <!-- Navbar -->
-    <nav id="navbar">
+    <nav id="navbar" class="sub">
       <a href="/" class="navbar__logo">
         <img src="images/logo.png" alt="logo" />
       </a>
@@ -77,45 +94,31 @@
       </form>
     </aside>
 
-    <!-- Home -->
-    <section id="home">
-      <!-- <video
-        class="home__video"
-        src="video/ksj.mp4"
-        autoplay
-        loop
-        muted
-        data-keepplaying
-      ></video>-->
-      <img class="home__video" src="images/video1.PNG" alt="" />
-    </section>
-
-    <!-- Introduce -->
-    <section id="introduce" class="section">
-      <h1 class="introduce__title">케이쉴드 주니어란?</h1>
-      <p class="introduce__description">
-        과학기술정보통신부가 주최하고 한국인터넷진흥원이 주관하는 K-Shield Jr.
-        교육은 향후 정보보호 분야 취업 시 현장실무를 즉각 수행할 수 있는 사이버
-        보안 전문 주니어 인력 양성을 목표로 하는 프로그램입니다.
-        국가직무능력표준(NCS)에 맞춘 실습 중심의 교육과정 이며, 운영기관별
-        100명씩 총 200명을 선발하여 200시간 이상의 교육과정 이수 후 취업
-        지원까지 운영되는 취업 지원 실무 맞춤형 교육과정입니다.
-      </p>
-      <ul class="introduce__icons">
-        <li>
-          <img src="images/main-what-pic-01.png" alt="" />
-          <p>사이버 보안 전문 주니어 인력 양성</p>
-        </li>
-        <li>
-          <img src="images/main-what-pic-02.png" alt="" />
-          <p>200시간 이상의 교육과정</p>
-        </li>
-        <li>
-          <img src="images/main-what-pic-03.png" alt="" />
-          <p>취업지원 실무 맞춤형 교육과정</p>
-        </li>
-      </ul>
-    </section>
+    <div class="section">
+      <form action="admin.php" method="POST">
+        <label for="query">query</label>
+        <input type="text" name="query" id="db-query" />
+        <input type="submit" value="전송" />
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>userid</th>
+            <th>email</th>
+            <th>password</th>
+            <th>name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>1</td>
+          <td>wngur</td>
+          <td>wngur@naver.com</td>
+          <td>wngur</td>
+          <td>김주혁</td>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Contact -->
     <footer id="contact">

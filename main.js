@@ -13,6 +13,16 @@ toggle.addEventListener("click", () => {
 });
 
 function memberboxActive() {
-  memberbox.classList.toggle("active");
   loginBtn.classList.toggle("active");
+
+  if (memberbox.classList.toggle("active") == true) {
+    memberbox.querySelector(".user__id").disabled = false;
+    memberbox.querySelector(".user__id").focus();
+    memberbox.querySelector(".user__pw").disabled = false;
+    memberbox.querySelector(".login__submit").disabled = false;
+  } else {
+    memberbox.querySelector(".user__id").disabled = "disabled";
+    memberbox.querySelector(".user__pw").disabled = "disabled";
+    memberbox.querySelector(".login__submit").disabled = "disabled";
+  }
 }

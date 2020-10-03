@@ -1,0 +1,321 @@
+/* Global */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size--border-radius: 4px;
+  --size--avatar: 220px;
+
+  /* Annimation */
+  --animation--duration: 300ms;
+}
+/* Typography */
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+/* Universal tag */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  cursor: default;
+}
+
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+/* Section common */
+.section {
+  padding: 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar */
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: var(--weight-bold);
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+#navbar.sub {
+  background-color: var(--color-dark-grey);
+}
+
+.navbar__menu li:hover {
+  background-color: coral;
+  border-radius: 4px;
+}
+
+.navbar__menu {
+  display: flex;
+  font-size: var(--font-regular);
+}
+
+.navbar__menu li {
+  margin-right: 100px;
+  padding: 8px 12px;
+}
+
+.navbar__util {
+  display: flex;
+}
+
+.navbar__util button {
+  width: 30px;
+  height: 35px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0 5px;
+}
+
+.util__login {
+  background-image: url("images/icon_login.png");
+}
+
+.util__login.active {
+  background-image: url("images/icon_exit.svg");
+}
+
+.util__register {
+  background-image: url("images/icon_register.png");
+}
+
+.util__admin {
+  background-image: url("images/icon_admin.svg");
+}
+
+.navbar__toogle {
+  display: none;
+  position: absolute;
+  right: 17px;
+  top: 15px;
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+/* Memberbox */
+
+#memberbox {
+  padding: 25px 15px;
+  position: fixed;
+  right: 0;
+  top: 66px;
+  background-color: var(--color-white);
+  opacity: 0;
+  z-index: -1;
+  transition: top var(--animation--duration) ease-in;
+}
+
+#memberbox.active {
+  opacity: 1;
+  right: 0;
+  top: 98px;
+  z-index: 1;
+}
+
+#memberbox .login {
+  display: flex;
+  flex-direction: column;
+}
+
+.user__id,
+.user__pw,
+.login__submit {
+  padding: 8px 10px;
+}
+
+.user__id {
+  margin-bottom: 3px;
+}
+
+.login__submit {
+  margin-top: 10px;
+  background-color: var(--color-orange);
+}
+
+/* Contact */
+
+#contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-dark-grey);
+  padding: 30px 0;
+}
+
+.contact__logo {
+  width: 114px;
+  height: 107px;
+}
+
+.contact__title {
+  color: var(--color-white);
+}
+
+.info__list {
+  display: flex;
+}
+
+.info__list dl,
+.info__list dl a {
+  display: flex;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--color-light-white);
+}
+
+.info__list:nth-child(odd) dl {
+  display: flex;
+}
+
+.info__list dl + dl::before {
+  margin: 0 5px;
+  content: "|";
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  /* Navbar */
+  #navbar {
+    background-color: var(--color-dark-grey);
+    position: relative;
+  }
+
+  /* Contact */
+  #contact {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .contact__info {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  /* Navbar */
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__logo img {
+    width: 200px;
+    height: auto;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .navbar__util {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar__toogle {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__util.active {
+    display: flex;
+  }
+
+  /* Memberbox */
+  #memberbox.active {
+    top: 66px;
+  }
+}
