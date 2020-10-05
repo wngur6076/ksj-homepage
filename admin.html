@@ -13,8 +13,23 @@
       crossorigin="anonymous"
     ></script>
     <script src="main.js" defer></script>
+    <script src="admin.js" defer></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+    ></script>
     <link rel="stylesheet" href="common.css" />
     <style>
+      .query {
+        width: 70%;
+      }
+
+      fieldset legend {
+        font-size: 40px;
+        font-weight: 600;
+        text-align: start;
+      }
+
       .section {
         height: 650px;
       }
@@ -30,6 +45,14 @@
         border-bottom: 1px solid #dadada;
         font-family: Consolas, monospace;
         font-family: 12px;
+      }
+
+      .section a {
+        color: black;
+        border: 1px solid black;
+        padding: 10px;
+        font-weight: bold;
+        background-color: orange;
       }
     </style>
   </head>
@@ -58,14 +81,14 @@
           <button
             class="util__admin"
             title="관리자"
-            onclick="location.href='admin.php'"
+            onclick="location.href='admin.html'"
           ></button>
         </li>
       </ul>
 
-      <a href="#" class="navbar__toogle">
+      <button class="navbar__toogle" onclick="navbarActive()">
         <i class="fas fa-bars"></i>
-      </a>
+      </button>
     </nav>
 
     <!-- Memberbox -->
@@ -95,29 +118,27 @@
     </aside>
 
     <div class="section">
-      <form action="admin.php" method="POST">
-        <label for="query">query</label>
-        <input type="text" name="query" id="db-query" />
-        <input type="submit" value="전송" />
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>userid</th>
-            <th>email</th>
-            <th>password</th>
-            <th>name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <td>1</td>
-          <td>wngur</td>
-          <td>wngur@naver.com</td>
-          <td>wngur</td>
-          <td>김주혁</td>
-        </tbody>
-      </table>
+      <a href="legacy_admin.php">Legacy</a>
+      <fieldset class="ajax">
+        <legend>Ajax</legend>
+        <form>
+          <label for="query">query</label>
+          <input type="text" name="query" id="query" class="query" />
+          <input type="button" value="전송" onclick="ajaxCall();" />
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>userid</th>
+              <th>email</th>
+              <th>password</th>
+              <th>name</th>
+            </tr>
+          </thead>
+          <tbody id="ajaxTbody"></tbody>
+        </table>
+      </fieldset>
     </div>
 
     <!-- Contact -->
@@ -156,7 +177,7 @@
         <div class="info__list">
           <dl>
             <dt class="sr-only">조직</dt>
-            <dd>(주) 컬처메이커스</dd>
+            <dd>(주)컬처메이커스</dd>
           </dl>
           <dl>
             <dt class="sr-only">운영 :</dt>
