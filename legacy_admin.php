@@ -7,7 +7,6 @@
   <title>admin</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/4653e649a2.js" crossorigin="anonymous"></script>
-  <script src="main.js" defer></script>
   <link rel="stylesheet" href="common.css" />
   <style>
     .query {
@@ -83,11 +82,11 @@
   </aside>
 
 
-  <div class="section">
+  <section class="section">
     <?php
     include "./db.php";
     ?>
-    <a href="admin.html">Ajax</a>
+    <a href="admin.html">Asynchronous</a>
     <fieldset>
       <legend>Basic</legend>
       <form action="legacy_admin.php" method="POST">
@@ -161,7 +160,7 @@
         </tbody>
       </table>
     </fieldset>
-  </div>
+  </section>
 
   <!-- Contact -->
   <footer id="contact">
